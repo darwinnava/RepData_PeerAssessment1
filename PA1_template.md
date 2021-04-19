@@ -1,19 +1,24 @@
 ---
 title: "Reproducible Research: Peer Assessment 1"
-author: "Darwin Reynell Nava"
+author: "Darwin R. Nava F."
 date: "19 de abril de 2021"
 output: html_document
 ---
+  
+'''{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+'''
+
 
 ## Loading and preprocessing the data  
-```{r}  
+'''{r}  
 library(dplyr)
 steps <- read.csv("./activity.csv", sep=",", header=TRUE)  
 steps <- na.omit(steps)  
 steps$date <- as.Date(steps$date)  
 by_day <- group_by(steps, date)  
 steps_daily <- summarize(by_day, steps=sum(steps))  
-```
+'''
 
 ## What is mean total number of steps taken per day?  
 ```{r}  
@@ -78,8 +83,8 @@ qplot(interval, steps,data=steps_interval_weektype, facets=weektype~.,geom="line
 ``` 
 
 *It is observed:*  
-*Max Weekdays: x= 835 y= 207. Mean= 33.36489*  
-*Max Weekends: x= 915 y= 153. Mean= 40.02226*  
-*More activity during the weekends in contrast to the weekdays.*  
-
-*end*
+  *Max Weekdays: x= 835 y= 207. Mean= 33.36489*  
+  *Max Weekends: x= 915 y= 153. Mean= 40.02226*  
+  *More activity during the weekends in contrast to the weekdays.*  
+  
+  *end*

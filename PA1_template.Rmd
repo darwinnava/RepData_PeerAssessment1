@@ -1,9 +1,13 @@
 ---
 title: "Reproducible Research: Peer Assessment 1"
-author: "Darwin Reynell Nava"
+author: "Darwin R. Nava F."
 date: "19 de abril de 2021"
 output: html_document
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
 ## Loading and preprocessing the data  
 ```{r}  
